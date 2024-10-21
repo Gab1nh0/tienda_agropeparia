@@ -3,44 +3,37 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function Register() {
-  const [username, setUsername] = useState('');
+export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState('BUYER'); // En mayúsculas para que coincida con el JSON
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Limpiar mensajes previos
+
+    // Limpiar mensajes anteriores
     setErrorMessage('');
     setSuccessMessage('');
 
-    // Enviar los datos a la API
+    // Enviar datos de inicio de sesión a la API
     try {
-      const res = await fetch('http://localhost:3000/api/auth/register', { // URL de la API corregida
+      const res = await fetch('http://localhost:3000/api/auth/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          username,
-          email,
-          password,
-          role
-        }),
+        body: JSON.stringify({ email, password }),
       });
 
       const data = await res.json();
 
-      if (res.status === 201) {
-        setSuccessMessage(data.message);
-        router.push('/login'); // Redirigir al login después del registro exitoso
+      if (res.status === 200) {
+        setSuccessMessage('Inicio de sesión exitoso');
+        router.push('/dashboard'); // Redirigir al dashboard o página deseada
       } else {
-        setErrorMessage(data.message || 'Error en el registro');
+        setErrorMessage(data.message || 'Credenciales inválidas');
       }
     } catch (error) {
       setErrorMessage('Ocurrió un error inesperado');
@@ -49,18 +42,8 @@ export default function Register() {
 
   return (
     <div>
-      <h1>Registro de Usuario</h1>
+      <h1>Iniciar Sesión</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="username">Nombre de Usuario</label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-          />
-        </div>
         <div>
           <label htmlFor="email">Correo Electrónico</label>
           <input
@@ -81,15 +64,7 @@ export default function Register() {
             required
           />
         </div>
-        <div>
-          <label htmlFor="role">Rol</label>
-          <select id="role" value={role} onChange={(e) => setRole(e.target.value)} required>
-            <option value="BUYER">Buyer</option>
-            <option value="MILL_OWNER">Mill Owner</option>
-            <option value="ADMIN">Admin</option>
-          </select>
-        </div>
-        <button type="submit">Registrar</button>
+        <button type="submit">Iniciar Sesión</button>
       </form>
 
       {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
