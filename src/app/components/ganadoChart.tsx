@@ -2,7 +2,7 @@ import * as echarts from 'echarts';
 
 type EChartsOption = echarts.EChartsOption;
 
-export function arrozChart(chartDomId: string) {
+export function GanadoChart(chartDomId: string) {
   const chartDom = document.getElementById(chartDomId)!;
   const myChart = echarts.init(chartDom);
   const option: EChartsOption = {
@@ -19,7 +19,7 @@ export function arrozChart(chartDomId: string) {
       },
     },
     legend: {
-      data: ['Molino #1', 'Molino #2', 'Molino #3', 'Molino #4', 'Molino #5'],
+      data: ['Ganadero #1', 'Ganadero #2', 'Ganadero #3', 'Ganadero #4', 'Ganadero #5'],
     },
     toolbox: {
       feature: {
@@ -46,49 +46,51 @@ export function arrozChart(chartDomId: string) {
     ],
     series: [
       {
-        name: 'Molino #1',
+        name: 'Ganadero #1',
         type: 'line',
         stack: 'Total',
         areaStyle: {},
         emphasis: {
           focus: 'series',
         },
-        data: [120, 132, 101, 134, 90, 230, 210],
+        data: [118, 130, 100, 136, 92, 228, 208],
       },
       {
-        name: 'Molino #2',
+        name: 'Ganadero #2',
+        type: 'line',
+        color:'#898121',
+        stack: 'Total',
+        areaStyle: {},
+        emphasis: {
+          focus: 'series',
+        },
+        data: [121, 133, 103, 132, 88, 231, 212],
+      },
+      {
+        name: 'Ganadero #3',
         type: 'line',
         stack: 'Total',
         areaStyle: {},
         emphasis: {
           focus: 'series',
         },
-        data: [220, 182, 191, 234, 290, 330, 310],
+        data: [119, 131, 102, 135, 91, 229, 211],
       },
       {
-        name: 'Molino #3',
+        name: 'Ganadero #4',
         type: 'line',
         stack: 'Total',
         areaStyle: {},
         emphasis: {
           focus: 'series',
         },
-        data: [150, 232, 201, 154, 190, 330, 410],
+        data: [122, 134, 104, 133, 89, 232, 209],
       },
       {
-        name: 'Molino #4',
+        name: 'Ganadero #5',
         type: 'line',
         stack: 'Total',
-        areaStyle: {},
-        emphasis: {
-          focus: 'series',
-        },
-        data: [320, 332, 301, 334, 390, 330, 320],
-      },
-      {
-        name: 'Molino #5',
-        type: 'line',
-        stack: 'Total',
+        color:'#4C4B16',
         label: {
           show: true,
           position: 'top',

@@ -3,6 +3,9 @@
   background-color: #9B3131;
   padding: 15px;
   justify-content: end;
+  height: 75px;
+  bottom: 0;
+  width: 200vh;
 }
 .text{
   color: white;

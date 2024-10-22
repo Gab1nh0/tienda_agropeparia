@@ -17,7 +17,6 @@ export async function POST(req: Request) {
       );
     }
 
-    // Buscar usuario
     const user = await prisma.user.findUnique({
       where: { email },
     });
@@ -29,7 +28,7 @@ export async function POST(req: Request) {
       );
     }
 
-    // Verificar contraseña
+ 
     const passwordMatch = await bcrypt.compare(password, user.password);
 
     if (!passwordMatch) {
@@ -39,14 +38,14 @@ export async function POST(req: Request) {
       );
     }
 
-    // Generar JWT
+
     const token = jwt.sign(
       { userId: user.id, role: user.role },
       process.env.JWT_SECRET || 'your-secret-key',
-      { expiresIn: '1d' } // Token expira en 1 día
+      { expiresIn: '1d' } 
     );
 
-    // Configurar la respuesta y establecer la cookie con el token
+
     const response = NextResponse.json(
       { 
         message: 'Login exitoso',
@@ -62,10 +61,10 @@ export async function POST(req: Request) {
 
     // Establecer la cookie con el token
     response.cookies.set('token', token, {
-      httpOnly: true, // Solo accesible por el servidor
-      secure: process.env.NODE_ENV === 'production', // Solo en HTTPS en producción
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
       maxAge: 60 * 60 * 24, // 1 día
-      path: '/', // Válida para toda la aplicación
+      path: '/', 
     });
 
     return response;

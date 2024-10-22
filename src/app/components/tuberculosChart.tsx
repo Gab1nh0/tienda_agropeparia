@@ -2,7 +2,7 @@ import * as echarts from 'echarts';
 
 type EChartsOption = echarts.EChartsOption;
 
-export function arrozChart(chartDomId: string) {
+export function tuberculosChart(chartDomId: string) {
   const chartDom = document.getElementById(chartDomId)!;
   const myChart = echarts.init(chartDom);
   const option: EChartsOption = {
@@ -47,6 +47,7 @@ export function arrozChart(chartDomId: string) {
     series: [
       {
         name: 'Molino #1',
+        color: '#605678',
         type: 'line',
         stack: 'Total',
         areaStyle: {},
@@ -89,6 +90,7 @@ export function arrozChart(chartDomId: string) {
         name: 'Molino #5',
         type: 'line',
         stack: 'Total',
+        color: '#8ABFA3',
         label: {
           show: true,
           position: 'top',
