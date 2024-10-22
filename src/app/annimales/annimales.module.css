@@ -1,0 +1,135 @@
+.section_animales {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    gap: 5px;
+}
+
+.section_animales a{
+    text-decoration: none;
+    color: white;
+
+}
+.cartas_animales {
+    display: flex;
+    gap: 30px;
+}
+
+.enlace_ganado {
+    position: relative; 
+    width: 500px;
+    height: 600px;
+    background-image: url("https://s3-alpha-sig.figma.com/img/1158/896a/402c2b5b4cd0c8b605fda0b66dfcb403?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=UsxFoKlF8k0v8pQA4koyp4NmuZpNEDOw7rdlFeUWV~8~otVG0iJde3RmSzNS7J~SeO2psHR3Xnr9oDw9c80awsYKpMHsMJ~LYNSM3Qs3aR2kRbvVmf0lnIxQMwIgKzktaNJ3FtOj7O4Z7KmhioxEnxHMsoXUxFJENLGOiKZUud5cZIXMSGMj23EgmXo8mY~uxUkUefyTC38mNQ8PTBytAwTl3zadCmmF4d0q6RHOjZldCsSyR1J0qhUCxJQC9qLIJWKMdrosSeb7pB6~ZSEHpNM~jTRaWDPOqI8VBrBX0CV83apUUWs8~Y1Qde6Xq4U-FhXdfCUwe~xyMzJfFxM0Qw__");
+    border-radius: 16px;
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.enlace_ganado::before {
+    content: ""; /* Necesario para mostrar el pseudo-elemento */
+    position: absolute; /* Posiciona el pseudo-elemento sobre el contenedor */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.5); /* Color gris con opacidad del 50% */
+    border-radius: 16px; /* Asegura que tenga el mismo borde redondeado */
+    z-index: 0; /* Asegura que esté detrás de otros elementos */
+}
+
+.enlace_ganado:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.enlace_text {
+    position: relative;
+    color: white;
+    z-index: 1; /* Asegura que el texto esté encima del filtro */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 80px; /* Mantiene el texto en la parte superior */
+}
+
+.enlace_text h2 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.enlace_granos {
+    position: relative; 
+    width: 500px;
+    height: 600px;
+    background-image: url("https://s3-alpha-sig.figma.com/img/3502/7744/afe88511458450a144b4d92b5abc016d?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=GyWIIWNO5PZPemh~v~ElJ5ZGAJpqZ7sgcaVYKh0OdziliQYIdnNhHBNxgZvXDu0YN5NVnv4bRD0-c0rOUKe5AtJ9U0HJ93BeDHNvOpx5NOKdFE~GWQRuEZ9nz4dPIm8hnp9DsPWOiOAu-kvKkH3524SS3mIa1c-HeQZN-BGEiydgSfltCJvxKbVg7xjcAu21zlm84yesWlAl9jz92nsjFFDqxqITbdecTLvZToC8ecsdzNA7v0Z5UBa2aTMT1GKeJ2fG9gC7KYWyHI6UBtlLn95kHtsqUGztyYaBrLFSZH0zNUYyl9hI61q5~1HfpldjQFR4EmHQarM7mkUqYbOyCw__");
+    border-radius: 16px;
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden; 
+    transition: transform 0.3s ease;
+}
+
+
+
+.enlace_granos::before {
+    content: ""; /* Necesario para mostrar el pseudo-elemento */
+    position: absolute; /* Posiciona el pseudo-elemento sobre el contenedor */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.5); /* Color gris con opacidad del 50% */
+    border-radius: 16px; /* Asegura que tenga el mismo borde redondeado */
+    z-index: 0; /* Asegura que esté detrás de otros elementos */
+}
+
+.enlace_granos:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.enlace_granos_text{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 80px; 
+}
+
+.enlace_tuberculos {
+    position: relative; /* Cambiar a relative para que se comporte como los otros contenedores */
+    width: 500px;
+    height: 600px;
+    background-image: url("https://s3-alpha-sig.figma.com/img/96ce/5d3a/2b7ae457573239f7181c28821b81514a?Expires=1730678400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=Zmza1KOtUa8nSlqxM4-oKpiI6nAA83VKSX-dVIU707h0y63elWhJDujkqgk3OX0Q5df60hFp-Sy04nf93bXWg6TfqEY4KiZXDzXF~86iNuC7Zmfyb8zcj4hXwr7REt9rxXrwIvqVwMwXd5Y8XUxeH12yzuwvGa36~7lXjk6nN1-f6frFS4~J~a7Q0P2xKozKhEciCsFiSz7cU71BeOTcSaGnkFo-dMlPRdg085b-8o5BTr0hSAs1hO0ZdkHKGpF1zM63XzGgR~n76w1jx7Z7ZgBitXmRuWU35ldn5bRsVwODuQTX2rJqTHnlby3zT7iUoeli1n0pZ6VuaNXCqp6LRg__");
+    border-radius: 16px;
+    background-size: cover; 
+    background-position: center; 
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.enlace_tuberculos::before {
+    content: ""; /* Necesario para mostrar el pseudo-elemento */
+    position: absolute; /* Posiciona el pseudo-elemento sobre el contenedor */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.5); /* Color gris con opacidad del 50% */
+    border-radius: 16px; /* Asegura que tenga el mismo borde redondeado */
+    z-index: 0; /* Asegura que esté detrás de otros elementos */
+}
+
+.enlace_tuberculos:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}

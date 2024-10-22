@@ -13,11 +13,11 @@ export default function Login() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Limpiar mensajes anteriores
     setErrorMessage('');
     setSuccessMessage('');
 
-    // Enviar datos de inicio de sesión a la API
+    //conexion pal api
+
     try {
       const res = await fetch('http://localhost:3000/api/auth/login', {
         method: 'POST',
@@ -31,7 +31,7 @@ export default function Login() {
 
       if (res.status === 200) {
         setSuccessMessage('Inicio de sesión exitoso');
-        router.push('/dashboard'); // Redirigir al dashboard o página deseada
+        router.push('/');
       } else {
         setErrorMessage(data.message || 'Credenciales inválidas');
       }
