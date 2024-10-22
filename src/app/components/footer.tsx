@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './footer.module.css';
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div>
-        <p>Desarrollado por: <p className={styles.text}>Los cuates</p></p>
+        <p className={styles.black_text}>Desarrollado por: <span className={styles.text}>Los cuates</span></p>
       </div>
     </footer>
   );
 };
 
-export default footer;
+export default Footer;
